@@ -28,14 +28,9 @@ function addFive(number) {
 */
 function addTwoToArray(arr) {
     let finalArray = [];
-
-    let sum = 0;
-
     for (let num of arr) {
-        sum = addTwo(num);
-        finalArray.push(sum);
+        finalArray.push(addTwo(num));
     }
-    console.log(finalArray, "finalArray");
     return finalArray;
 }
 
@@ -49,14 +44,9 @@ function addTwoToArray(arr) {
 */
 function addThreeToArray(arr) {
     let finalArray = [];
-
-    let sum = 0;
-
     for (let num of arr) {
-        sum = addThree(num);
-        finalArray.push(sum);
+        finalArray.push(addThree(num));
     }
-    console.log(finalArray, "finalArray");
     return finalArray;
 }
 
@@ -68,16 +58,12 @@ function addThreeToArray(arr) {
 */
 function addFiveToArray(arr) {
     let finalArray = [];
-
-    let sum = 0;
-
     for (let num of arr) {
-        sum = addFive(num);
-        finalArray.push(sum);
+        finalArray.push(addFive(num));
     }
-    console.log(finalArray, "finalArray");
     return finalArray;
 }
+console.log(addFiveToArray([1, 2, 3, 4]))
 
 /*
 In above function addTwoToArray, addThreeToArray, addFiveToArray we are repeating the code, let's fix this.
@@ -96,12 +82,9 @@ In above function addTwoToArray, addThreeToArray, addFiveToArray we are repeatin
 */
 function changeArray(arr, cb) {
     let finalArray = [];
-    let sum = 0;
     for (let num of arr) {
-        sum = cb(num);
-        finalArray.push(sum);
+        finalArray.push(cb(num));
     }
-    console.log(finalArray, "finalArray");
     return finalArray;
 }
 
@@ -438,7 +421,13 @@ filter is a higher order function.
     console.log(filter(grade, isGradeC));
 */
 function filter(arr, cb) {
-
+    let finalArray = [];
+    for (let people of arr) {
+        if (cb(people)) {
+            finalArray.push(people);
+        }
+    }
+    return finalArray;
 }
 
 /*
