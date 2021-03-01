@@ -31,16 +31,16 @@ console.log(message.includes("is"));
 console.log(message.includes("Is"));
 
 // Check and log whether the word from index 3 to 6 is "you" or not (use slice)
-console.log(message.slice(3, 6));
+console.log(message.slice(3, 6) === "you");
 
 // Check and log whether the word from index 7 to 8 is "a" or not
-console.log(message.slice(7, 8));
+console.log(message.slice(7, 8) === "a");
 
 // Check and log whether the last 3 character in message is "no!" or not (you can use -3 in slice)
-console.log(message.slice(-3));
+console.log(message.slice(-3) === "no!");
 
 // Check and log whether the last 5 character in message is "no!" or not
-console.log(message.slice(-4));
+console.log(message.slice(-5) === "no!");
 
 // Log the message variable, all in lowecase
 console.log(message.toLowerCase())
@@ -49,15 +49,15 @@ console.log(message.toLowerCase())
 console.log(message.toUpperCase())
 
 // Replace the word "are" to "can't", store it in a new variable named `newMessage` and log it.
-console.log(message.replace("are", "can't"));
-
-// Replace the word "still" to "" (empty) using newMessage variable, and re-assign the output to the variable `newMessage` and log it.
-let newMessage = message.replace("still", "");
+let newMessage = message.replace("are", "can't")
 console.log(newMessage);
 
+// Replace the word "still" to "" (empty) using newMessage variable, and re-assign the output to the variable `newMessage` and log it.
+newMessage = newMessage.replace("still", "");
+
 // Replace the word "thinking" to "decide" using newMessage variable, and re-assign the output to the variable `newMessage` and log it.
-let newMessageVariable = newMessage.replace("thinking", "decide");
-console.log(newMessageVariable);
+newMessage = newMessage.replace("thinking", "decide");
+console.log(newMessage);
 
 // Log all the characters from the message variable (you can user for..of loop on string)
 for (let characters of message) {
@@ -68,4 +68,6 @@ for (let characters of message) {
 var messageArray = message.split(" ");
 
 // Log all the words of messageArray
-console.log();
+for (let word of messageArray) {
+    console.log(word);
+}
