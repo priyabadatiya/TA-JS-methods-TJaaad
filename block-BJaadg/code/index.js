@@ -36,7 +36,8 @@ for (let i = 0; i <= 6; i++) {
 5. Using the variable from , to and quote variable dispaly this message
   "Syrio Forel said There is only one thing we say to death: Not today to Arya Stark." (use concat method)
 */
-console.log(from.concat(to).concat(quote));
+let final = from.concat(" said ", quote, " to ", to);
+console.log(final);
 
 /*
 6. Does from, to and quote ends with "rk". Check all three.
@@ -76,17 +77,17 @@ quoteSplitted.join(" ");
 /*
 12. Find the index of second "o" in quote. Use indexOf
 */
-quote.indexOf("o");
+quote.indexOf("o", 8);
 
 /*
 13. Find the last index of letter "a" in quote.
 */
-quote.lastIndexOf("a")
+let lastIndexOfA = quote.lastIndexOf("a")
 
 /*
 14. Find the second last index of letter "a" in quote.
 */
-quote.lastIndexOf("a");
+quote.lastIndexOf("a", lastIndexOfA - 1);
 
 /*
 15. Make the quote 70 character long. If it has less characters add rest as .......
