@@ -94,19 +94,19 @@ let filteredCustomer = customers.filter((customer) => customer.firstname.startsW
 let firstnameCustomer = customers.map((customer) => customer.firstname)
 
 // - Create new array with all the full names (ex: "Joe Blogs")
-let fullName = customers.map((customer) => `customer ${firstname} $customer ${lastname}`)
+let fullName = customers.map((customer) => `${customer.firstname} ${customer.lastname}`)
 
 // - Sort the array created above alphabetically
 console.log([...fullName].sort());
 
 // - Create a new array that contains only user who has at least one vowel in the firstname.
 let vowel = customers.filter((customer) => {
-
-    if (customer.firstname.toLowerCase().includes("a") ||
-        customer.firstname.toLowerCase().includes("e") ||
-        customer.firstname.toLowerCase().includes("i") ||
-        customer.firstname.toLowerCase().includes("0") ||
-        customer.firstname.toLowerCase().includes("u")) {
+    var firstName = customer.firstname.toLowerCase()
+    if (firstName.includes("a") ||
+        firstName.includes("e") ||
+        firstName.includes("i") ||
+        firstName.includes("0") ||
+        firstName.includes("u")) {
         return true
     } else {
         return false
