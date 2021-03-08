@@ -5,32 +5,58 @@ function countAllPeople() {
 }
 
 function peopleByHouses() {
-
+    return got.houses.reduce((acc, a) => {
+        var obj = {}
+        obj[`${a.name}`] = a.people.length
+        acc.push(obj)
+        return acc
+    }, [])
 }
 
 function everyone() {
-    // your code goes here
+    return got.houses.reduce((acc, cv) => acc + cv.people.map((a) => a.name))
 }
 
 function nameWithS() {
-    // your code goes here
+    return got.houses.reduce((acc, cv) => {
+
+        var value = cv.people.map(value => {
+            return value.name.includes('s') || value.name.includes('S') ? value.name : ''
+        })
+        var filteredValue = value.filter(a => a != '')
+        acc.push(...filteredValue)
+        return acc
+    }, [])
 }
 
 function nameWithA() {
-    // your code goes here
+    return got.houses.reduce((acc, cv) => {
+
+        var value = cv.people.map(value => {
+            return value.name.includes('a') || value.name.includes('A') ? value.name : ''
+        })
+        var filteredValue = value.filter(a => a != '')
+        acc.push(...filteredValue)
+        return acc
+    }, [])
 }
 
+
 function surnameWithS() {
-    // your code goes here
+
 }
 
 function surnameWithA() {
-    // your code goes here
+
 }
 
 function peopleNameOfAllHouses() {
-    // your code goes here
+    return got.houses.reduce((acc, cv) => {
+        acc[cv.name] = cv.people.map((a) => a.name);
+        return acc;
+    }, {});
 }
+
 
 // Testing your result after writing your function
 console.log(countAllPeople());
