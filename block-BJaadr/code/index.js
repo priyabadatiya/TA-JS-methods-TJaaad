@@ -1,35 +1,35 @@
 // NOTE: You can only use the (reduce) array method to solve this exercise:
 
 function countAllPeople() {
-  // your code goes here
+    return got.houses.reduce((acc, cv) => acc + cv.people.length, 0);
 }
 
 function peopleByHouses() {
-  // your code goes here
+
 }
 
 function everyone() {
-  // your code goes here
+    // your code goes here
 }
 
 function nameWithS() {
-  // your code goes here
+    // your code goes here
 }
 
 function nameWithA() {
-  // your code goes here
+    // your code goes here
 }
 
 function surnameWithS() {
-  // your code goes here
+    // your code goes here
 }
 
 function surnameWithA() {
-  // your code goes here
+    // your code goes here
 }
 
 function peopleNameOfAllHouses() {
-  // your code goes here
+    // your code goes here
 }
 
 // Testing your result after writing your function
