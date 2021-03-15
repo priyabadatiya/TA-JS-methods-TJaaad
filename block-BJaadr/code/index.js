@@ -1,58 +1,61 @@
 // NOTE: You can only use the (reduce) array method to solve this exercise:
 
 function countAllPeople() {
-    let result = [];
-    for (let house of got.houses) {
-        for (let person of house.people) {
-            result.push(person);
-        }
-    }
-    return result.length;
+    return got.houses.reduce((acc, cv) => {
+        return acc + cv.people.length;
+    }, 0);
 }
 
 function peopleByHouses() {
-    let final = {};
-    for (let house of got.houses) {
-        final[house.name] = house.people.length;
-    }
-    return final;
+    return got.houses.reduce((acc, cv) => {
+        acc[cv.name] = cv.people.length;
+        return acc;
+    }, {});
 }
 
 function everyone() {
-    let result = [];
-    got.houses.forEach((house) => {
-        let peopleName = house.people.map((v) => v.name);
-        result = result.concat(peopleName);
-    });
-    return result;
+    return got.houses.reduce((acc, cv) => {
+        acc = acc.concat(cv.people.map((v) => v.name));
+        return acc;
+    }, []);
 }
 
 function nameWithS() {
-    let allPeople = everyone();
-    return allPeople.filter((name) => name.toLowerCase().includes("s"));
+    return got.houses.reduce((acc, cv) => {
+        acc = acc.concat(
+            cv.people.filter((v) => v.name.toLowerCase().includes("s")));
+        return acc;
+    }, []);
 }
 
 function nameWithA() {
-    let allPeople = everyone();
-    return allPeople.filter((name) => name.toLowerCase().includes("a"));
+    return got.houses.reduce((acc, cv) => {
+        acc = acc.concat(
+            cv.people.filter((v) => v.name.toLowerCase().includes("s")));
+        return acc;
+    }, [])
 }
 
 function surnameWithS() {
-    let allPeople = everyone();
-    return allPeople.filter((name) => name.split(" ")[1].toLowerCase().includes("s"));
+    return got.houses.reduce((acc, cv) => {
+        acc = acc.concat(
+            cv.people.filter((v) => v.name.split(" ")[1].toLowerCase().includes("s")));
+        return acc;
+    }, []);
 }
 
 function surnameWithA() {
-    let allPeople = everyone();
-    return allPeople.filter((name) => name.split(" ")[1].toLowerCase().includes("a"));
+    return got.houses.reduce((acc, cv) => {
+        acc = acc.concat(
+            cv.people.filter((v) => v.name.split(" ")[1].toLowerCase().includes("a")))
+    })
 }
 
 function peopleNameOfAllHouses() {
-    let final = {};
-    for (let house of got.houses) {
-        final[house.name] = house.people.map((v) => v.name);
-    }
-    return final;
+    return got.houses.reduce((acc, cv) => {
+        acc[cv.name] = cv.people.map((v) => v.name);
+        return acc;
+    }, {});
 }
 
 // Testing your result after writing your function
