@@ -28,19 +28,25 @@ function everyone() {
 }
 
 function nameWithS() {
-
+    let allPeople = everyone();
+    return allPeople.filter((name) => name.toLowerCase().includes("s"));
 }
 
 function nameWithA() {
-
+    let allPeople = everyone();
+    return allPeople.filter((name) => name.toLowerCase().includes("a"));
 }
+
 
 function surnameWithS() {
-    // your code goes here
+    let allPeople = everyone();
+    return allPeople.filter((name) => name.split(" ")[1].toLowerCase().includes("s"));
 }
 
+
 function surnameWithA() {
-    // your code goes here
+    let allPeople = everyone();
+    return allPeople.filter((name) => name.split(" ")[1].toLowerCase().includes("a"));
 }
 
 function peopleNameOfAllHouses() {
